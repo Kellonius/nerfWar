@@ -7,42 +7,39 @@ body {
 } */
 
 .content {
-  height: 99%;
-  width: 99.5%;
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
-  padding: 5px 5px 5px 5px;
-} 
-
-.orange-card {
-  height: 48%;
-  background: #FF4E00;
-  padding: 5px 5px 5px 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.team-card {
-    background: #E0E0E0;
-    width: 17%;
-    padding: 15px 5px 15px 5px;
-    align-self: center;
-    height: 65%;
+    height: 99%;
+    width: 99.5%;
     display: flex;
+    /* justify-content: space-between; */
     flex-direction: column;
+    padding: 5px 5px 5px 5px;
+  } 
+  
+  .orange-card {
+    height: 48%;
+    background: #FF4E00;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
-}
-
-.purple-card {
-  height: 48%;
-  background: #7F5EBA;
-  padding: 5px 5px 5px 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-
-
+  }
+  
+  .team-card {
+      background: #E0E0E0;
+      width: 17%;
+      padding: 15px 5px 15px 5px;
+      align-self: center;
+      height: 65%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
+  
+  .purple-card {
+    height: 48%;
+    background: #7F5EBA;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
