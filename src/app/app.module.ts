@@ -1,19 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {MatCardModule, MatDividerModule} from '@angular/material/'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatCardModule, MatDividerModule, MatToolbarModule } from '@angular/material/'
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.router';
+import { GameDashboard } from './game-dashboard/game-dashboard.component';
+import { GameSelect } from './game-select/game-select.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameDashboard,
+    GameSelect
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatDividerModule
+    AppRoutingModule,
+    MatDividerModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

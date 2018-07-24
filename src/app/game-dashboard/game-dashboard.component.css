@@ -1,0 +1,92 @@
+/* html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+} */
+
+.scoreButton {
+  display: block;
+  /* font-size:24px; */
+  /* padding: 10px 0px; */
+  min-width: 30px;
+  text-align: center;
+  width: 20%;
+}
+
+.content {
+  height: 100%;
+  /* width: 99.5%; */
+  width: 80%;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  padding: 5px 5px 5px 5px;
+} 
+
+.scoreboard {
+  padding: 5px;
+  width: 18%;
+}
+
+.scoreboard .team-card {
+  display: block !important;
+}
+
+.scoreboard .title {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.scoreboard .data {
+  padding: 5px 0px;
+}
+
+.score {
+  display: block !important;
+}
+
+.team-card {
+  height: 90%;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.deathImage {
+  background-image: url("resources/DeathImage.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-blend-mode: overlay;
+  background-position: center;
+}
+
+
+.member-card {
+  background-color: #E0E0E0;
+  width: 17%;
+  padding: 15px 5px 15px 5px;
+  align-self: center;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.orange {
+  background-color: var(--viz-orange);
+}
+
+.purple {
+  background-color: var(--viz-purple);
+}
+
+.green {
+  background-color: var(--viz-green);
+}
+
+.yellow {
+  background-color: var(--viz-yellow);
+}

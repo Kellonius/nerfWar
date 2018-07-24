@@ -1,0 +1,9 @@
+<a href="\dashboard">
+    Go to Game Dashboard
+</a>
+<div>
+    <mat-card *ngFor="let mode of allGameModes">
+        <p>{{mode.name}}</p>
+        <p>{{mode.description}}</p>
+    </mat-card>
+</div>

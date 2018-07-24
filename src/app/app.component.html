@@ -1,23 +1,22 @@
-<div class="content">
-  <mat-card class="orange-card">
-    <mat-card class="team-card" *ngFor="let player of players">
-      <p>Name: {{player.name}}</p>
-      <p>{{player.image}}</p>
-      <p>Points: {{player.points}}</p>
-      <p>Respawn Timer: {{player.respawn}}</p>
-    </mat-card>
-  </mat-card>
-
-  <mat-divider></mat-divider>
-  <mat-divider></mat-divider>
-
-  <mat-card class="purple-card">
-    <mat-card class="team-card" *ngFor="let player of players">
-      <p>Name: {{player.name}}</p>
-      <p>{{player.image}}</p>
-      <p>Points: {{player.points}}</p>
-      <p>Respawn Timer: {{player.respawn}}</p>
-    </mat-card>
-  </mat-card>
-  <!-- <mat-card>Score Text</mat-card> -->
+<div class="ribbon">
+    <a class="app-title-link" href="/">
+        <img src="../resources/VizientLogo.png" class="enterprise-header__logo" alt="Vizient">
+        <!-- <div class="vizient__logo"> </div> -->
+    </a>
+    <span class="clickable" (click)="navigate('')">
+        New Game
+    </span>
+    <span *ngIf="isInGame()" class="clickable" (click)="navigate('/dashboard')">
+        Restart Game
+    </span>
+</div>
+<!-- <mat-toolbar class="enterprise-header">
+    <a class="app-title-link" href="/">
+        <img src="../resources/VizientLogo.png" class="enterprise-header__logo" alt="Vizient">
+        <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header enterprise-header__member app-title-text">Nerf War</div>
+    </a>
+</mat-toolbar> -->
+<div class="pageContents">
+    <mat-divider></mat-divider>
+    <router-outlet></router-outlet>
 </div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {MatCardModule, MatDividerModule} from '@angular/material/'
-import { memberModel } from './Models/memberModel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatCardModule, MatDividerModule, MatToolbarModule } from '@angular/material/'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,34 +9,14 @@ import { memberModel } from './Models/memberModel';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Nerf War';
-  players: memberModel[] = [{
-    name: "player1",
-    image: "string",
-    points: 0,
-    respawn: 0
-  },{
-    name: "player2",
-    image: "string",
-    points: 0,
-    respawn: 0
-  },{
-    name: "player3",
-    image: "string",
-    points: 0,
-    respawn: 0
-  },{
-    name: "player4",
-    image: "string",
-    points: 0,
-    respawn: 0
-  },{
-    name: "player5",
-    image: "string",
-    points: 0,
-    respawn: 0
-  }]
 
+  constructor(private router: Router) { }
 
+  navigate(route: string) {
+    this.router.navigate([route]);
+  }
+
+  isInGame(): boolean {
+    return this.router.url.includes('dashboard');
+  }
 }
-

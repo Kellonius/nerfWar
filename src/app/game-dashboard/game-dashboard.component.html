@@ -1,0 +1,41 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div style="display: flex; height: 100%">
+  <div class="content">
+    <div *ngFor="let team of allTeams" [style.height.%]="98/teamCount">
+      <mat-card [ngClass]="team.color" class="team-card">
+        <mat-card class="member-card" [ngClass]="{'deathImage': player.respawn > 0}" *ngFor="let player of team.members">
+          <!-- <div class="deathImage"></div> -->
+            <div class="clickable" (click)="playerDied(player)">
+              <p>Name: {{player.name}}</p>
+              <!-- <p>{{player.image}}</p> -->
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <span class="clickable scoreButton fa fa-minus" (click)="playerPoints(player, false)"></span>
+              <span>
+                  Points: {{player.points}}
+              </span>
+              <span class="clickable scoreButton fa fa-plus" (click)="playerPoints(player)"></span>
+            </div>
+            <p>Respawn Timer: {{player.respawn}}</p>
+        </mat-card>
+      </mat-card>
+    </div>
+  </div>
+  <div class="content scoreboard" style="display:block">
+    <div *ngFor="let team of allTeams" [style.height.%]="98/teamCount">
+      <mat-card [ngClass]="team.color" class="team-card">
+        <div class="title">
+          {{team.color}} Team
+        </div>
+        <div class="data">
+          Points: {{teamTotalPoints(team)}}
+        </div>
+        <div class="data">
+          Deaths: {{teamTotalDeaths(team)}}
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

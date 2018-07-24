@@ -1,7 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --ribbonHeight: 25px;
+  --viz-orange: #FF4E00;
+  --viz-purple: #7F5EBA;
+  --viz-green: green;
+  --viz-yellow: yellow;
+}
+
+.vizient__logo {
+  background-image: url("./resources/VizientLogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: var(--ribbonHeight);
+  width: 80px;
+}
+
+.enterprise-header__logo {
+  max-height: var(--ribbonHeight);
+  padding: 0px 10px;
+  padding-left: 0;
+  /* margin: auto; */
+  display: block;
+  max-width: 160px; }
+
+@media screen and (min-width: 760px) {
+  .enterprise-header__logo {
+    padding: 0px 22px;
+    float: left;
+  }
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  background-color: #8b00003d;
 }
