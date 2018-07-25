@@ -74,19 +74,3 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-
-.orange {
-  background-color: var(--viz-orange);
-}
-
-.purple {
-  background-color: var(--viz-purple);
-}
-
-.green {
-  background-color: var(--viz-green);
-}
-
-.yellow {
-  background-color: var(--viz-yellow);
-}

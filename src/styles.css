@@ -6,6 +6,18 @@
   --viz-green: green;
   --viz-yellow: yellow;
 }
+.orange {
+  background-color: var(--viz-orange);
+}
+.purple {
+  background-color: var(--viz-purple);
+}
+.green {
+  background-color: var(--viz-green);
+}
+.yellow {
+  background-color: var(--viz-yellow);
+}
 
 .vizient__logo {
   background-image: url("./resources/VizientLogo.png");

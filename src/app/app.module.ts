@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.router';
 import { GameDashboard } from './game-dashboard/game-dashboard.component';
 import { GameSelect } from './game-select/game-select.component';
+import { TeamSelect } from './team-select/team-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameDashboard,
-    GameSelect
+    GameSelect,
+    TeamSelect
   ],
   imports: [
     BrowserModule,

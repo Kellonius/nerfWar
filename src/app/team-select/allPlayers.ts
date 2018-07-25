@@ -1,0 +1,27 @@
+import { memberModel } from "../Models/memberModel";
+
+export const PlayerList: memberModel[] = [
+    new memberModel("Nathaniel Berry", ""),
+    new memberModel("Alexander Dunn", ""),
+    new memberModel("Ben Martin", ""),
+    new memberModel("Roger Beasley", ""),
+    new memberModel("Ben Froemling", ""),
+    new memberModel("Joey Froemling", ""),
+    new memberModel("Blake Rhodes", ""),
+    new memberModel("Brandon Rachelski", ""),
+    new memberModel("Bryce Bigham", ""),
+    new memberModel("Cameron Hutchison", ""),
+    new memberModel("Chris Dunning", ""),
+    new memberModel("Joseph Bartly", ""),
+    new memberModel("Kyle Maloney", ""),
+    new memberModel("Mark Burks", ""),
+    new memberModel("Matt Cook", ""),
+    new memberModel("Ryan Everett", ""),
+    new memberModel("Dylan Geile", ""),
+    new memberModel("Kirk Tolleshaug", ""),
+    new memberModel("Kyle Shaffar", ""),
+    new memberModel("Nathan Waller", ""),
+    // new memberModel("", ""),
+    // new memberModel("", ""),
+    // new memberModel("", ""),
+]

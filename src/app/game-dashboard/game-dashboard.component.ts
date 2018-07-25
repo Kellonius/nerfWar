@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatCardModule, MatDividerModule } from '@angular/material/'
 import { TeamColors, memberModel, teamModel, gameModeModel } from '../Models/memberModel';
@@ -9,6 +9,7 @@ import { TeamColors, memberModel, teamModel, gameModeModel } from '../Models/mem
   styleUrls: ['./game-dashboard.component.css']
 })
 export class GameDashboard {
+  @Input() allTeams: teamModel[] = [];
   gameMode: gameModeModel = {
     name: "Team Death Match",
     scoreValue: 1,
@@ -18,8 +19,7 @@ export class GameDashboard {
     timeLimit: 5 // Time in Minutes
   }
   title = 'Nerf War';
-  teamCount = 3; // Number of teams playing
-  allTeams: teamModel[] = [];
+  // teamCount = 3; // Number of teams playing
   players: memberModel[] = [
     new memberModel("player1", "Picture Here")
     ,
@@ -33,14 +33,14 @@ export class GameDashboard {
   ]
 
   constructor() {
-    for (var i = 0; i < this.teamCount; i++) {
-      var team: teamModel = {
-        name: ("Team " + (i + 1)),
-        color: TeamColors[i],
-        members: JSON.parse(JSON.stringify(this.players))
-      };
-      this.allTeams.push(team);
-    }
+    // for (var i = 0; i < this.teamCount; i++) {
+    //   var team: teamModel = {
+    //     name: ("Team " + (i + 1)),
+    //     color: TeamColors[i],
+    //     members: JSON.parse(JSON.stringify(this.players))
+    //   };
+    //   this.allTeams.push(team);
+    // }
   }
 
   playerPoints(player: memberModel, increase: boolean = true) {
