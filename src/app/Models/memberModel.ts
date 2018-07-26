@@ -22,6 +22,7 @@ export class memberModel {
     public points: number = 0;
     public respawn: number = 0;
     public lives?: number = undefined;
+    public team: number = undefined;
 
     constructor(name, image, lives = undefined) {
         this.name = name;
