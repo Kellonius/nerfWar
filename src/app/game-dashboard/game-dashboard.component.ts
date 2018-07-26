@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatCardModule, MatDividerModule } from '@angular/material/'
 import { TeamColors, memberModel, teamModel, gameModeModel } from '../Models/memberModel';
@@ -8,9 +8,9 @@ import { TeamColors, memberModel, teamModel, gameModeModel } from '../Models/mem
   templateUrl: './game-dashboard.component.html',
   styleUrls: ['./game-dashboard.component.css']
 })
-export class GameDashboard {
+export class GameDashboard implements OnInit {
   @Input() allTeams: teamModel[] = [];
-  gameMode: gameModeModel = {
+  @Input() gameMode: gameModeModel = {
     name: "Team Death Match",
     scoreValue: 1,
     deathTimer: 5, // Time in seconds
@@ -19,7 +19,6 @@ export class GameDashboard {
     timeLimit: 5 // Time in Minutes
   }
   title = 'Nerf War';
-  // teamCount = 3; // Number of teams playing
   players: memberModel[] = [
     new memberModel("player1", "Picture Here")
     ,
@@ -32,15 +31,20 @@ export class GameDashboard {
     new memberModel("player5", "Picture Here")
   ]
 
-  constructor() {
-    // for (var i = 0; i < this.teamCount; i++) {
-    //   var team: teamModel = {
-    //     name: ("Team " + (i + 1)),
-    //     color: TeamColors[i],
-    //     members: JSON.parse(JSON.stringify(this.players))
-    //   };
-    //   this.allTeams.push(team);
-    // }
+  constructor() { }
+
+  ngOnInit() {
+    if (this.allTeams.length <= 0) {
+      for (var i = 0; i < 2; i++) {
+        var team: teamModel = {
+          name: ("Team " + (i + 1)),
+          color: TeamColors[i],
+          members: JSON.parse(JSON.stringify(this.players))
+        };
+        this.allTeams.push(team);
+      }
+    }
+    console.log(this.allTeams);
   }
 
   playerPoints(player: memberModel, increase: boolean = true) {
@@ -61,6 +65,10 @@ export class GameDashboard {
         }
       }, 1000)
     }
+  }
+
+  teamBoardHeights() {
+    return 98 / this.allTeams.length;
   }
 
   teamTotalPoints(team: teamModel) {

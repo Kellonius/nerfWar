@@ -7,18 +7,32 @@
             {{gameMode.description}}
         </div>
     </mat-card>
-    <mat-card class="Settings">
-        Time Limit:
-        <input type="number" name="Time Limit" (ngModel)="gameMode.timeLimit"> Minutes
-        <br> ScoreLimit:
-        <input type="number" name="Score Limit" (ngModel)="gameMode.scoreLimit">
-        <br> Points Per Objective:
-        <input type="number" name="Points" (ngModel)="gameMode.scoreValue">
-        <br> Respawn Time:
-        <input type="number" name="Respawn" (ngModel)="gameMode.deathTimer"> Seconds
-        <br> Number of Teams:
-        <input type="number" name="Teams" min="2" max="4">
-    </mat-card>
+    <div class="Settings">
+        <mat-card class="Card">
+            <div class="Info">
+                <!-- <div>
+                    Time Limit:
+                    <input type="number" name="Time Limit" [(ngModel)]="gameMode.timeLimit"> Minutes
+                </div>
+                <div>
+                    ScoreLimit:
+                    <input type="number" name="Score Limit" [(ngModel)]="gameMode.scoreLimit">
+                </div> -->
+                <div>
+                    Points Per Objective:
+                    <input type="number" name="Points" [(ngModel)]="gameMode.scoreValue">
+                </div>
+                <div>
+                    Respawn Time:
+                    <input type="number" name="Respawn" [(ngModel)]="gameMode.deathTimer"> Seconds
+                </div>
+                <div>
+                    Number of Teams:
+                    <input type="number" name="Teams" [(ngModel)]="numberOfTeams" min="2" max="4">
+                </div>
+            </div>
+        </mat-card>
+    </div>
     <div class="SetTeams">
         Click on the player to set which team they are on.
         <div style="display:flex; flex-wrap: wrap; width: 100%; justify-content: space-evenly;">
@@ -34,8 +48,10 @@
             </div>
         </div>
     </div>
-    <button (click)="StartGame()">
-        Start Game
-    </button>
+    <div style="text-align: center; padding: 10px;">
+        <button style="font-size: 18px" (click)="StartGame()">
+            Start Game
+        </button>
+    </div>
 </div>
-<game-dashboard [allTeams]="teams" *ngIf="!GamePreparation()"></game-dashboard>
+<game-dashboard [gameMode]="gameMode" [allTeams]="teams" *ngIf="!GamePreparation()"></game-dashboard>

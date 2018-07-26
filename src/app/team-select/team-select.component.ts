@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatCardModule, MatDividerModule } from '@angular/material/'
 import { TeamColors, memberModel, teamModel, gameModeModel } from '../Models/memberModel';
@@ -9,11 +9,11 @@ import { PlayerList } from './allPlayers';
   templateUrl: './team-select.component.html',
   styleUrls: ['./team-select.component.css']
 })
-export class TeamSelect {
+export class TeamSelect implements OnChanges {
   startGame = false;
   numberOfTeams = 2;
   eligiblePlayers = PlayerList;
-  teams: teamModel [] = []
+  teams: teamModel[] = []
   gameMode: gameModeModel = {
     name: "Team Deathmatch",
     scoreValue: 1,
@@ -25,6 +25,16 @@ export class TeamSelect {
 
   constructor() {
   }
+  tempTeamNumber = this.numberOfTeams;
+  ngOnChanges() {
+    console.log(this.numberOfTeams);
+    if (this.numberOfTeams != this.tempTeamNumber) {
+      this.tempTeamNumber = this.numberOfTeams;
+      this.eligiblePlayers.forEach(player => {
+        player.team = undefined;
+      })
+    }
+  }
 
   TeamColor(teamIndex?: number): string {
     return teamIndex != undefined ? TeamColors[teamIndex] : "";
@@ -33,7 +43,7 @@ export class TeamSelect {
   SetPlayersTeam(player) {
     if (player.team == undefined)
       player.team = 0;
-    else if (player.team == this.numberOfTeams-1)
+    else if (player.team >= this.numberOfTeams - 1)
       player.team = undefined;
     else
       player.team += 1;
@@ -48,13 +58,13 @@ export class TeamSelect {
     this.teams = [];
     for (let i = 0; i < this.numberOfTeams; i++) {
       this.teams.push({
-        name: "Team" + i+1,
+        name: "Team" + i + 1,
         color: TeamColors[i],
         members: []
       })
     }
     this.eligiblePlayers.forEach(player => {
-      if (player.team != undefined) {
+      if (player.team != undefined && player.team <= this.numberOfTeams-1) {
         this.teams[player.team].members.push(player);
       }
     })

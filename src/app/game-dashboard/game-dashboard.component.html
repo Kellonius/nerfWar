@@ -3,7 +3,7 @@
 </head>
 <div style="display: flex; height: 100%">
   <div class="content">
-    <div *ngFor="let team of allTeams" [style.height.%]="98/teamCount">
+    <div *ngFor="let team of allTeams" [style.height.%]="teamBoardHeights()">
       <mat-card [ngClass]="team.color" class="team-card">
         <mat-card class="member-card" [ngClass]="{'deathImage': player.respawn > 0}" *ngFor="let player of team.members">
           <!-- <div class="deathImage"></div> -->
@@ -23,8 +23,8 @@
       </mat-card>
     </div>
   </div>
-  <div class="content scoreboard" style="display:block">
-    <div *ngFor="let team of allTeams" [style.height.%]="98/teamCount">
+  <div class="content scoreboard">
+    <div *ngFor="let team of allTeams" [style.height.%]="teamBoardHeights()">
       <mat-card [ngClass]="team.color" class="team-card">
         <div class="title">
           {{team.color}} Team

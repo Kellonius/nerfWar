@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatCardModule, MatDividerModule, MatToolbarModule } from '@angular/material/'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.router';
@@ -22,7 +23,8 @@ import { TeamSelect } from './team-select/team-select.component';
     MatCardModule,
     AppRoutingModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

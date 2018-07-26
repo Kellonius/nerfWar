@@ -1,0 +1,27 @@
+.Title {
+    text-align: center;
+    font-weight: bolder;
+}
+.Settings {
+    text-align: center;
+    width: 100%;
+}
+.Settings .Card {
+    margin: auto;
+    width: 500px;
+    text-align: center;
+}
+.Settings .Card .Info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: auto;
+    text-align: left;
+    width: 250px;
+}
+.Settings .Card .Info div {
+    padding: 5px 0px;
+}
+.Settings input {
+    width: 80px;
+}
